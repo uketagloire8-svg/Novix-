@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1224">
+  <title>NOVIX — Un autre espace</title>
+
+  <style>
+    :root {
+      --night: #0b1224;
+      --blue: #182847;
+      --white: #f7f9ff;
+      --muted: #9caac2;
+      --line: #263550;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .symbol {
+      width: 27px;
+      height: 27px;
+      border: 3px solid var(--white);
+      border-radius: 9px 9px 9px 2px;
+      transform: rotate(-12deg);
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      max-width: 650px;
+      margin: auto;
+      padding: 30px 20px 100px;
+    }
+
+    .welcome {
+      margin: 15px 0 30px;
+    }
+
+    .welcome small {
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.2;
+      margin: 12px 0;
+    }
+
+    .welcome p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0 15px;
+    }
+
+    .section-title h2 {
+      font-size: 19px;
+      margin: 0;
+    }
+
+    .section-title span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .empty {
+      padding: 27px 20px;
+      background: var(--blue);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .empty .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .empty p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      background: var(--white);
+      color: var(--night);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .game-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      margin-top: 12px;
+    }
+
+    .game-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      background: var(--night);
+      border-top: 1px solid var(--line);
+      padding: 12px 5px calc(12px + env(safe-area-inset-bottom));
+    }
+
+    nav button {
+      color: var(--muted);
+      background: transparent;
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+
+    nav button.active {
+      color: var(--white);
+      background: var(--blue);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 35px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <div class="brand">
+        <span class="symbol"></span>
+        <span>NOVIX</span>
+      </div>
+      <div class="tagline">UN AUTRE ESPACE</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <small>BIENVENUE DANS NOVIX</small>
+      <h1>Découvre.<br>Explore à ta façon.</h1>
+      <p>Un espace simple pour les images, les vidéos et les jeux.</p>
+    </section>
+
+    <section id="discover">
+      <div class="section-title">
+        <h2>À découvrir</h2>
+        <span>ESPACE 01</span>
+      </div>
+
+      <div class="empty">
+        <div class="icon">◈</div>
+        <strong>Le contenu arrive ici</strong>
+        <p>Les photos et les vidéos publiées par NOVIX apparaîtront dans cet espace.</p>
+      </div>
+    </section>
+
+    <section id="create" class="hidden">
+      <div class="section-title">
+        <h2>Espace créateur</h2>
+        <span>ESPACE 02</span>
+      </div>
+
+      <div class="empty">
+        <div class="icon">＋</div>
+        <strong>Publier sur NOVIX</strong>
+        <p>Cette fonction sera réservée à l'administrateur. Nous ajouterons une publication sécurisée dans une prochaine étape.</p>
+      </div>
+    </section>
+
+    <section id="universe" class="hidden">
+      <div class="section-title">
+        <h2>L'univers NOVIX</h2>
+        <span>ESPACE 03</span>
+      </div>
+
+      <div class="game-card">
+        <strong>🎮 Le nombre secret</strong>
+        <p>Devine le nombre choisi entre 1 et 10.</p>
+        <button onclick="playGame()">Jouer</button>
+        <p id="message"></p>
+      </div>
+
+      <div class="game-card">
+        <strong>Photos et vidéos</strong>
+        <p>Les collections seront disponibles ici.</p>
+      </div>
+    </section>
+
+    <footer> NOVIX · Simplement différent.</footer>
+  </main>
+
+  <nav>
+    <button class="active" onclick="showSection('discover', this)">Découvrir</button>
+    <button onclick="showSection('create', this)">Créer</button>
+    <button onclick="showSection('universe', this)">Univers</button>
+  </nav>
+
+  <script>
+    function showSection(id, button) {
+      ['discover', 'create', 'universe'].forEach(section => {
+        document.getElementById(section).classList.toggle(
+          'hidden',
+          section !== id
+        );
+      });
+
+      document.querySelectorAll('nav button').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function playGame() {
+      const secret = Math.floor(Math.random() * 10) + 1;
+      const answer = prompt('Choisis un nombre entre 1 et 10 :');
+
+      if (answer === null || answer.trim() === '') return;
+
+      const number = Number(answer);
+      const message = document.getElementById('message');
+
+      if (!Number.isInteger(number) || number < 1 || number > 10) {
+        message.textContent = 'Choisis un nombre entier entre 1 et 10.';
+      } else if (number === secret) {
+        message.textContent = 'Bravo ! Tu as trouvé le nombre.';
+      } else {
+        message.textContent = 'Pas cette fois ! Le nombre était ' + secret + '.';
+      }
+    }
+  </script>
+</body>
+    </html>
